@@ -34,11 +34,11 @@
     "src"
   ],
   "scripts": {
-    "build": "npm run build:client && tsup",
+    "build": "tsup",
     "build:client": "NODE_ENV=production tsc && vite build --config src/client/vite.config.ts",
     "dev": "npm run dev:client & tsup --watch",
     "dev:client": "vite build --watch --force --config src/client/vite.config.ts",
-    "postpack": "npm run types",
+    "postpack": "npm run build:client && npm run types",
     "prepare": "npm run build",
     "publint": "publint --strict=true --level=suggestion",
     "start:server": "node dist/cli.js",
