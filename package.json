@@ -1,19 +1,19 @@
 {
-  "name": "refinejs-repo",
+  "name": "refinedev",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "author": "refine",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
     "biome": "biome",
-    "bootstrap": "lerna bootstrap --hoist --strict --ignore-scripts --include-dependencies",
-    "bootstrap:all": "lerna bootstrap --hoist --strict --ignore-scripts --ignore=\"monorepo-*\" --ignore with-nx --scope @refinedev/* --scope create-refine-app",
-    "bootstrap:codemod": "cd packages/codemod && npm ci && cd ../..",
-    "bootstrap:dev": "lerna bootstrap --ignore-scripts --include-dependencies",
     "build": "lerna run build --include-dependencies --scope @refinedev/core",
     "build:all": "lerna run build --ignore=\"monorepo-*\" --ignore with-nx --scope @refinedev/* --scope create-refine-app",
     "changeset": "changeset",
-    "coffee": "npm run nuke && npm i && npm run bootstrap:all && npm run build:all",
+    "coffee": "npm run nuke && npm i && npm run build:all",
     "dev": "lerna run dev --stream --parallel --scope @refinedev/core",
     "dev:docs": "concurrently \"cd documentation && npm run dev\" \"npm run dev -- --scope @refinedev/live-previews\" --names docs,live --prefix-colors blue,red",
     "lerna": "lerna",
