@@ -101,6 +101,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "postpack": "npm run types",
     "prepare": "npm run build",
     "publint": "publint --strict=true --level=suggestion",
     "test": "jest --passWithNoTests --runInBand",
